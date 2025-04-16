@@ -1,0 +1,12 @@
+// $skipComponentStyles: true;
+
+// 🟢 Bootstrap pehle load hoga
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/bootstrap"; // OR use selected components only if needed
+
+// 🟢 Phir Spartacus styles
+@import "~@spartacus/styles/scss/core";
+@import "~@spartacus/styles/scss/theme";
+@import "~@spartacus/styles/scss/components";

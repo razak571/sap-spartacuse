@@ -1,0 +1,9 @@
+{
+    "/occ": {
+      "target": "https://spartacus-demo.eastus.cloudapp.azure.com",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  }
+  

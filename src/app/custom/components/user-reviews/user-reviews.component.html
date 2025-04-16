@@ -1,0 +1,13 @@
+<div>
+  <input [(ngModel)]="userName" placeholder="Enter username" />
+  <button (click)="fetchReviews()">Fetch Reviews</button>
+</div>
+
+<div *ngIf="userReviews$ | async as reviews">
+  <div *ngFor="let review of reviews">
+    <h3>{{ review.author }}</h3>
+    <p>{{ review.text }}</p>
+    <p>Rating: {{ review.rating }}</p>
+    <hr />
+  </div>
+</div>

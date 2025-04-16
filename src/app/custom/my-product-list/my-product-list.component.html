@@ -1,0 +1,7 @@
+<h2>🔥 Custom Product List Override</h2>
+<!-- Original product list ka logic still works, kyunki extend kiya hai -->
+<ng-container *ngIf="model$ | async as model">
+  <div *ngFor="let product of model.products">
+    {{ product.name }}
+  </div>
+</ng-container>

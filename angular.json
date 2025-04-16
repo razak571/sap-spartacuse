@@ -31,7 +31,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+			 "src/custom-styles.scss"
             ],
             "scripts": []
           },
@@ -75,7 +76,8 @@
               "browserTarget": "spartacus-practice:build:production"
             },
             "development": {
-              "browserTarget": "spartacus-practice:build:development"
+              "browserTarget": "spartacus-practice:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -99,7 +101,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+			 "src/custom-styles.scss"
             ],
             "scripts": []
           }
