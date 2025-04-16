@@ -25,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserReviewsComponent } from './custom/components/user-reviews/user-reviews.component';
 import { BaseCardComponent } from './custom/components/base-card/base-card.component';
 import { CustomeCardComponent } from './custom/components/custome-card/custome-card.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { CustomeCardComponent } from './custom/components/custome-card/custome-c
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     BaseStorefrontModule,
+    FormsModule,
   ],
   providers: [
     OAuthService,
