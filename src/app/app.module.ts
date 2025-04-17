@@ -27,6 +27,7 @@ import { BaseCardComponent } from './custom/components/base-card/base-card.compo
 import { CustomeCardComponent } from './custom/components/custome-card/custome-card.component';
 import { FormsModule } from '@angular/forms';
 import { MyPracticeFeatureModule } from './custom/features/my-practice-feature/my-practice-feature.module';
+import { AboutModule } from './custom/about-feature/about/about.module';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { MyPracticeFeatureModule } from './custom/features/my-practice-feature/m
     BaseStorefrontModule,
     FormsModule,
     MyPracticeFeatureModule,
+    AboutModule,
   ],
   providers: [
     OAuthService,
