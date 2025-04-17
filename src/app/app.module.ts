@@ -26,6 +26,7 @@ import { UserReviewsComponent } from './custom/components/user-reviews/user-revi
 import { BaseCardComponent } from './custom/components/base-card/base-card.component';
 import { CustomeCardComponent } from './custom/components/custome-card/custome-card.component';
 import { FormsModule } from '@angular/forms';
+import { MyPracticeFeatureModule } from './custom/features/my-practice-feature/my-practice-feature.module';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { FormsModule } from '@angular/forms';
     EffectsModule.forRoot([]),
     BaseStorefrontModule,
     FormsModule,
+    MyPracticeFeatureModule,
   ],
   providers: [
     OAuthService,
@@ -86,6 +88,19 @@ import { FormsModule } from '@angular/forms';
         FreshProductListFlexComponent: {
           component: FreshProductListComponent,
         },
+      },
+      featureModules: {
+        practiceFeature: {
+          module: () =>
+            import(
+              '../app/custom/features/my-practice-feature/my-practice-feature.module'
+            ).then((m) => m.MyPracticeFeatureModule),
+          // Optionally protect route
+          // guards: [AuthGuard]
+        },
+        // testFeature: {
+        //   module: () => import().then((m) => m.)
+        // }
       },
     }),
   ],
