@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
 import { BaseStorefrontModule } from '@spartacus/storefront';
-import { CmsConfig, provideConfig } from '@spartacus/core';
+import { AuthGuard, CmsConfig, provideConfig } from '@spartacus/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { StoreModule } from '@ngrx/store';
@@ -28,6 +28,7 @@ import { CustomeCardComponent } from './custom/components/custome-card/custome-c
 import { FormsModule } from '@angular/forms';
 import { MyPracticeFeatureModule } from './custom/features/my-practice-feature/my-practice-feature.module';
 import { AboutModule } from './custom/about-feature/about/about.module';
+import { UserModule } from './custom/about-feature/about/pages/user/user.module';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { AboutModule } from './custom/about-feature/about/about.module';
     FormsModule,
     MyPracticeFeatureModule,
     AboutModule,
+    UserModule,
   ],
   providers: [
     OAuthService,
@@ -100,9 +102,14 @@ import { AboutModule } from './custom/about-feature/about/about.module';
           // Optionally protect route
           // guards: [AuthGuard]
         },
-        // testFeature: {
-        //   module: () => import().then((m) => m.)
-        // }
+
+        userFeature: {
+          module: () =>
+            import(
+              '../app/custom/about-feature/about/pages/user/user.module'
+            ).then((m) => m.UserModule),
+          // guards: [AuthGuard],
+        },
       },
     }),
   ],
