@@ -1,5 +1,11 @@
 <h1>HELLO</h1>
-<div *ngFor="let product of products">
+<!-- <div *ngFor="let product of products">
   <p>ID: {{ product.id }} | Item: {{ product.name }}</p>
+</div> -->
+
+<div *ngIf="products$ | async as product">
+  <div *ngFor="let myProduct of product">
+    <p>ID Number: {{ myProduct.id }} | Item Name: {{ myProduct.name }}</p>
+  </div>
 </div>
 <!-- <button (click)="fetchProduct()">fetch product</button> -->
