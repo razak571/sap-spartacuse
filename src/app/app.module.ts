@@ -29,6 +29,10 @@ import { FormsModule } from '@angular/forms';
 import { MyPracticeFeatureModule } from './custom/features/my-practice-feature/my-practice-feature.module';
 import { AboutModule } from './custom/about-feature/about/about.module';
 import { UserModule } from './custom/about-feature/about/pages/user/user.module';
+import { LoginComponent } from './custom/about-feature/login/login.component';
+import { cartReducer } from './custom/store/reducers/cart.reducers';
+import { CartComponent } from './custom/components/cart/cart-component';
+import { CartRouterModule } from './custom/components/cart/cart-routing.module';
 
 @NgModule({
   declarations: [
@@ -43,6 +47,8 @@ import { UserModule } from './custom/about-feature/about/pages/user/user.module'
     UserReviewsComponent,
     BaseCardComponent,
     CustomeCardComponent,
+    LoginComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,13 +56,14 @@ import { UserModule } from './custom/about-feature/about/pages/user/user.module'
     RouterModule.forRoot([]),
     HttpClientModule,
     AuthModule.forRoot(),
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({ cart: cartReducer }),
     EffectsModule.forRoot([]),
     BaseStorefrontModule,
     FormsModule,
     MyPracticeFeatureModule,
     AboutModule,
     UserModule,
+    CartRouterModule,
   ],
   providers: [
     OAuthService,
@@ -109,6 +116,13 @@ import { UserModule } from './custom/about-feature/about/pages/user/user.module'
               '../app/custom/about-feature/about/pages/user/user.module'
             ).then((m) => m.UserModule),
           // guards: [AuthGuard],
+        },
+
+        aboutModule: {
+          module: () =>
+            import('./custom/about-feature/about/about.module').then(
+              (m) => m.AboutModule
+            ),
         },
       },
     }),

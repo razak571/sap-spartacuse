@@ -16,4 +16,8 @@ export class AboutService {
   getProducts(): Observable<any[]> {
     return of(this.products);
   }
+
+  loggedIn() {
+    return true;
+  }
 }
